@@ -27,6 +27,6 @@ RUN \
 # Add the code
 WORKDIR /s2client-api
 ADD downloads/s2client-api .
-ADD api-*.sh .
+ADD api-*.sh /s2client-api/
 
 ENTRYPOINT [ "/bin/bash" ] 
