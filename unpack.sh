@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# This unpacks all of the zip files automatically
+
 VERSION=3.16.1
 UNZIP_CMD="unzip -Piagreetotheeula"
 
