@@ -18,8 +18,9 @@ fi
 
 
 # Start a new game container if GAME_CONTAINER is not yet defined
-if [ "${GAME_CONTAINER}" -eq "" ]; then
+if [ "${GAME_CONTAINER}" == "" ]; then
     GAME_CONTAINER=`docker run -d s2client-game`
+    echo "New game container started ${GAME_CONTAINER}"
     export GAME_CONTAINER
 fi
 

@@ -55,3 +55,9 @@ docker run -it s2client-api
 docker run -d s2client-game
 ~~~
 
+If you want to use the replay container automation you should export 
+the container ID in an environment variable.
+
+~~~
+export GAME_CONTAINER=docker run -d s2client-game
+~~~
