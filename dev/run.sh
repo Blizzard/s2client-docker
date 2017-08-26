@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-docker run -it s2client-dev
+docker run \
+    -v build-mount:/build-mount \
+    -it s2client-dev
