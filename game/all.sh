@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-./download.sh && ./unpack.sh && make-container.sh
+./download.sh && ./unpack.sh && ./make-container.sh
