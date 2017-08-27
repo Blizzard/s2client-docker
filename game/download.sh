@@ -2,7 +2,7 @@
 
 VERSION=3.16.1
 
-# This downloads zip files for current version 
+# This downloads zip files for current version
 mkdir -p downloads/
 pushd downloads
 wget -c http://blzdistsc2-a.akamaihd.net/Linux/SC2.${VERSION}.zip

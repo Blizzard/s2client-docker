@@ -27,4 +27,4 @@ RUN \
 # Add the code
 WORKDIR /s2client-api
 
-ENTRYPOINT [ "/bin/bash" ] 
+ENTRYPOINT [ "/bin/bash" ]
