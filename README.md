@@ -5,10 +5,10 @@ A docker image for building and running the StarCraft II API on Linux
 This is a work in progress. Contributions welcome!
 
 TODO:
-    * Get unit tests working on s2client-game container
-    * Automate the replay & Battle.net Cache population
-    * Create a combined container for developers (with git, API and game)
-    * Get some compose / swarm examples for doing larger training exercises
+  * [ ] Get unit tests working on s2client-game container
+  * [ ] Automate the replay & Battle.net Cache population
+  * [ ] Create a combined container for developers (with git, API and game)
+  * [ ] Get some compose / swarm examples for doing larger training exercises
 
 # Summary
 

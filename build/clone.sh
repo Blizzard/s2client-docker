@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This clones a clean copy of the repo
 mkdir -p downloads

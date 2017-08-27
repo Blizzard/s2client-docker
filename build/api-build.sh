@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This script is intended to be embedded in the build container for
 # automating the CMake / GNU make build process
