@@ -11,9 +11,10 @@ VERSION=3.16.1
 #
 REPLAY_PACK=3.16.1-Pack_1-fix.zip
 
+mkdir -p downloads
 if [ ! -f downloads/${REPLAY_PACK} ]; then
     pushd downloads
-    wget http://blzdistsc2-a.akamaihd.net/ReplayPacks/${REPLAY_PACK}
+    wget -c http://blzdistsc2-a.akamaihd.net/ReplayPacks/${REPLAY_PACK}
     mkdir -p replays
     unzip -Piagreetotheeula ${REPLAY_PACK} -d replays/
     popd
