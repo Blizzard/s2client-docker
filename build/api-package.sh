@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 VERSION=3.16.1
 PACKAGE=s2client-api-${VERSION}.tgz
 
