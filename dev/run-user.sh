@@ -2,5 +2,6 @@
 
 # This runs the user dev container
 docker run \
-    -v build-mount:/build-mount \
+    -v code:/code \
+    -v build:/build \
     -it s2client-`whoami`

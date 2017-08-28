@@ -19,6 +19,7 @@ docker build ${SCRIPT_PATH} \
     --build-arg GIT_EMAIL="${GIT_EMAIL}" \
     -t ${IMAGE_NAME}
 
+echo ==== Code mount created at /code in the container
 echo ==== Your github.com SSH public key for the container is:
 
 # Output the key for usage on github.com

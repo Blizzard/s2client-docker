@@ -17,4 +17,6 @@ for i in `ls -1 {Ladder,Melee}*.zip`; do
     $UNZIP_CMD -n -d $MAP_DIRECTORY $i
 done
 
+cp -r s2client-api/maps/* $MAP_DIRECTORY/
+
 popd

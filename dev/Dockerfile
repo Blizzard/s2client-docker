@@ -42,7 +42,7 @@ RUN git config --global user.email "$GIT_EMAIL"
 # Generate a new SSH key pair without user input
 RUN cat /dev/zero | ssh-keygen -q -N "" > /dev/null
 
-# Add the code
+# Set the starting directory
 WORKDIR /home/$SYSTEM_USER_NAME
 
 # Override the s2client-game entrypoint

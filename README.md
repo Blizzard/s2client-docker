@@ -43,7 +43,7 @@ TODO: There appears to be an issue connecting on the exposed port
     cd build && ./all.sh
 ~~~
 
-This builds the API and puts binary artifacts into the build-mount volume.
+This builds the API and puts binary artifacts into the build volume.
 
 4. Test the containers
 
