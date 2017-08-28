@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-VERSION=3.16.1
-PACKAGE=s2client-api-${VERSION}.tgz
+
+. api-config.sh
+
+PACKAGE=s2client-api-${GAME_VERSION}.tgz
 
 echo "===================================="
 echo "Building package ${PACKAGE}"

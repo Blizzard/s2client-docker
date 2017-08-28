@@ -3,7 +3,9 @@
 #
 # This script downloads the replay pack, adds it to a running container
 #
-VERSION=3.16.1
+SCRIPT_PATH=${0%/*}
+. ${SCRIPT_PATH}/../config.sh
+
 
 # Download and extract the replay pack if it doesn't exist
 #
@@ -16,7 +18,7 @@ if [ ! -f downloads/${REPLAY_PACK} ]; then
     pushd downloads
     wget -c http://blzdistsc2-a.akamaihd.net/ReplayPacks/${REPLAY_PACK}
     mkdir -p replays
-    unzip -Piagreetotheeula ${REPLAY_PACK} -d replays/
+    ${UNZIP_CMD} ${REPLAY_PACK} -d replays/
     popd
 fi
 
@@ -29,14 +31,18 @@ if [ "${GAME_CONTAINER}" == "" ]; then
 fi
 
 
+#
+# TODO: Replays can use a mount, cache should be joined and either
+# mounted or copied in. 
+#
 SRC_PATH="downloads/replays/Replays"
-DEST_PATH="/SC2/${VERSION}/StarCraftII/Replays/"
+DEST_PATH="/SC2/${GAME_VERSION}/StarCraftII/Replays/"
 
 echo "Copying into ${GAME_CONTAINER} ${SRC_PATH} -> ${DEST_PATH}"
 #docker cp ${SRC_PATH} ${GAME_CONTAINER}:${DEST_PATH}
 
 SRC_PATH="downloads/replays/Battle.net/"
-DEST_PATH="/SC2/${VERSION}/StarCraftII/Battle.net/"
+DEST_PATH="/SC2/${GAME_VERSION}/StarCraftII/Battle.net/"
 
 echo "Copying into ${GAME_CONTAINER} ${SRC_PATH} -> ${DEST_PATH}"
 #docker cp ${SRC_PATH} ${GAME_CONTAINER}:${DEST_PATH}

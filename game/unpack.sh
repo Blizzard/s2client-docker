@@ -2,17 +2,19 @@
 
 # This unpacks all of the zip files automatically
 
-VERSION=3.16.1
-UNZIP_CMD="unzip -Piagreetotheeula"
+SCRIPT_PATH=${0%/*}
+. ${SCRIPT_PATH}/../config.sh
 
 pushd downloads
 
-if [ ! -d ${VERSION}/StarCraftII ]; then
-    $UNZIP_CMD SC2.${VERSION}.zip -d ${VERSION}
+if [ ! -d ${GAME_VERSION}/StarCraftII ]; then
+    $UNZIP_CMD SC2.${GAME_VERSION}.zip -d ${GAME_VERSION}
 fi
 
+MAP_DIRECTORY=${GAME_VERSION}/StarCraftII/Maps
+
 for i in `ls -1 {Ladder,Melee}*.zip`; do
-    $UNZIP_CMD $i -d ${VERSION}/StarCraftII/Maps
+    $UNZIP_CMD -n -d $MAP_DIRECTORY $i
 done
 
 popd
