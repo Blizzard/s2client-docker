@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
-# This builds the game container
-docker build . -t s2client-game
+# This builds the container
+IMGNAME=s2client-game
+SCRIPT_PATH=${0%/*}
+
+echo ${IMGNAME} docker image building using ${SCRIPT_PATH}/Dockerfile
+docker build ${SCRIPT_PATH} -t ${IMGNAME}

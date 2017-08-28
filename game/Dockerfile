@@ -25,4 +25,4 @@ ENTRYPOINT [ "/SC2/3.16.1/StarCraftII/Versions/Base55958/SC2_x64", \
     "-listen", \
     "127.0.0.1", \
     "-port", \
-    "12000" ] 
+    "12000" ]
