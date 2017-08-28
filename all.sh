@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 #
-# Build all containers with one command
+# Build all containers with one command, intentionally omitting 'dev'
 #
-CONTAINER_LIST="build game dev"
+CONTAINER_LIST="build game"
 for CONTAINER in $CONTAINER_LIST; do
     echo ====== Running all steps for container: $CONTAINER
     pushd $CONTAINER
