@@ -23,6 +23,6 @@ EXPOSE 12000
 # Start SC2 with API listen port
 ENTRYPOINT [ "/SC2/3.16.1/StarCraftII/Versions/Base55958/SC2_x64", \
     "-listen", \
-    "127.0.0.1", \
+    "0.0.0.0", \
     "-port", \
     "12000" ]
