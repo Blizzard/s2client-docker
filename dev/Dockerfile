@@ -28,11 +28,17 @@ ARG SYSTEM_USER_NAME=gituser
 ARG GIT_USER_NAME="Git User"
 ARG GIT_EMAIL=user@example.com
 
+# Specify the shared mount points
+VOLUME [ "/code", "/build", "/replays" ]
+
 # Create the new git user
 RUN useradd -ms /bin/bash $SYSTEM_USER_NAME
 
 # Change the game folder ownership
 RUN chown -R $SYSTEM_USER_NAME:$SYSTEM_USER_NAME /SC2
+
+# Change the code folder ownership
+RUN chown -R $SYSTEM_USER_NAME:$SYSTEM_USER_NAME /code
 
 # Setup the git commit environment
 USER $SYSTEM_USER_NAME

@@ -12,6 +12,9 @@ RUN \
     python-minimal \
     software-properties-common
 
+# Specify the shared mount points
+VOLUME [ "/build", "/replays" ]
+
 # Please run ./download.sh && ./unpack.sh before running this Dockerfile
 # Add the 3.16.1
 WORKDIR /SC2/3.16.1

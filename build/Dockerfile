@@ -24,6 +24,9 @@ RUN \
     vim \
     wget
 
+# Specify the shared mount points
+VOLUME [ "/build" ]
+
 # Add the code
 WORKDIR /s2client-api
 ADD downloads/s2client-api .
