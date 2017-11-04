@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
-# Run an interactive container with the build (see build/all.sh)
+SCRIPT_PATH=${0%/*}
+. ${SCRIPT_PATH}/../config.sh
+
+IMAGE_TAG=${REPOSITORY}/game:${GAME_VERSION}
+
+# Run an interactive container with the build (see api-build/make-all.sh)
 docker run \
+    --rm \
     --entrypoint="/bin/bash" \
-    -v code:/code \
-    -v build:/build  \
-    -it s2client-game
+    --volume code:${CODE_MOUNT} \
+    --volume build:${BUILD_MOUNT}  \
+    --interactive --tty ${IMAGE_TAG}

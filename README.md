@@ -22,7 +22,7 @@ By downloading and running this you are agreeing to:
 1. Building the game container
 
 ~~~
-    cd game && ./all.sh
+    cd game && ./make-all.sh
 ~~~
 
 This creates a new container named s2client-api.
@@ -40,7 +40,7 @@ TODO: There appears to be an issue connecting on the exposed port
 3. Building the API build container
 
 ~~~
-    cd build && ./all.sh
+    cd build && ./make-all.sh
 ~~~
 
 This builds the API and puts binary artifacts into the build volume.
@@ -88,7 +88,7 @@ export GAME_CONTAINER=`docker run -P -d s2client-game`
 ### Developing using the API 
 
 ~~~
-    cd dev && ./all.sh
+    cd dev && ./make-all.sh
     docker run -it s2client-dev
 ~~~
 

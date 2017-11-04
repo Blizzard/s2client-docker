@@ -13,7 +13,7 @@ RUN \
     software-properties-common
 
 # Specify the shared mount points
-VOLUME [ "/build", "/replays" ]
+VOLUME [ "/s2client/build", "/s2client/replays" ]
 
 # Please run ./download.sh && ./unpack.sh before running this Dockerfile
 # Add the 3.16.1

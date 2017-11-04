@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-# Run an interactive container with the build (see build/all.sh)
+SCRIPT_PATH=${0%/*}
+. ${SCRIPT_PATH}/../config.sh
+
+# Run all the tests
 docker run \
-    --entrypoint "/build/all_tests" \
-    -v build:/build \
-    -v code:/code \
-    -t s2client-game \
-    -e /SC2/3.16.1/StarCraftII/Versions/Base55958/SC2_x64
+    --entrypoint "${BUILD_MOUNT}/all_tests" \
+    -v build:${BUILD_MOUNT} \
+    -v code:${CODE_MOUNT} \
+    -t ${IMAGE_TAG} \
+    -e /SC2/${GAME_VERSION}/StarCraftII/Versions/Base${BASE_BUILD_ID}/SC2_x64

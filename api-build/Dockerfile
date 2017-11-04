@@ -25,11 +25,11 @@ RUN \
     wget
 
 # Specify the shared mount points
-VOLUME [ "/build" ]
+VOLUME [ "/s2client/shared/build" ]
 
 # Add the code
 WORKDIR /s2client-api
 ADD downloads/s2client-api .
-ADD api-*.sh /s2client-api/
+ADD container-scripts/* .
 
 ENTRYPOINT [ "/bin/bash" ]
