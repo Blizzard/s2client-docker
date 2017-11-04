@@ -1,5 +1,5 @@
-FROM jrepp/s2client/game
-MAINTAINER jrepp@blizzard.com
+FROM ubuntu:16.04
+MAINTAINER jacobrepp@gmail.com
 
 # Update the image with required build packages
 RUN \
@@ -24,21 +24,16 @@ RUN \
     vim \
     wget
 
-WORKDIR /tmp
-ADD downloads/Anaconda3-5.0.1-Linux-x86_64.sh .
 
 # Install anaconda in batch mode
+WORKDIR /tmp
+ADD downloads/Anaconda3-5.0.1-Linux-x86_64.sh .
 RUN sh Anaconda3-5.0.1-Linux-x86_64.sh -b
-
-# Cleanup the installer
 RUN rm -f /tmp/Anaconda3*
-
-# Add the pysc2 code
-WORKDIR /pysc2
-ADD downloads/pysc2 .
+RUN echo "PATH=/root/anaconda3/bin:$PATH" >> /root/.bashrc
 
 # Specify the shared mount points
-VOLUME [ "/s2client/code", "/s2client/build", "/s2client/replays" ]
+VOLUME [ "/s2client/shared/code", "/s2client/shared/build", "/s2client/shared/game", "/s2client/shared/replays" ]
 
 # Generate a new SSH key pair without user input
 RUN cat /dev/zero | ssh-keygen -q -N "" > /dev/null
