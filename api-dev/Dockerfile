@@ -30,6 +30,7 @@ VOLUME [ "/s2client/shared/code", "/s2client/shared/build", "/s2client/shared/re
 # Generate a new SSH key pair without user input
 RUN cat /dev/zero | ssh-keygen -q -N "" > /dev/null
 
-ADD container-scripts /api-dev
+WORKDIR /
+ADD api-scripts /
 
 ENTRYPOINT [ "/bin/bash" ]

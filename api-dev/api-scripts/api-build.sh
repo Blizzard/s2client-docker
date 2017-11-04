@@ -3,8 +3,7 @@
 # This script is intended to be embedded in the build container for
 # automating the CMake / GNU make build process
 
-mkdir -p build
-pushd build
-cmake -G "Unix Makefiles" ..
-make -j8 all
+pushd /s2client/shared/build/s2client-api-build && \
+    cmake -G "Unix Makefiles" /s2client/shared/code/s2client-api && \
+    make -j8 all
 popd
