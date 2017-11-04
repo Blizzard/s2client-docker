@@ -14,7 +14,7 @@ pushd downloads
 
 # Just clone the base repository for the maps
 if [ ! -d s2client-api ]; then
-    git clone git@github.com:Blizzard/s2client-api.git
+    git clone --recursive git@github.com:Blizzard/s2client-api.git
 else
     pushd s2client-api
     git pull -r 
