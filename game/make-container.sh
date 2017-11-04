@@ -7,4 +7,7 @@ SCRIPT_PATH=${0%/*}
 IMAGE_TAG=${REPOSITORY}/game:${GAME_VERSION}
 
 echo ${IMAGE_NAME} docker image building using ${SCRIPT_PATH}/Dockerfile
-docker build ${SCRIPT_PATH} --tag ${IMAGE_TAG}
+docker build ${SCRIPT_PATH} \
+    --tag ${IMAGE_TAG} \
+    --build-arg BUILD_MOUNT=${BUILD_MOUNT} \
+    --build-arg REPLAYS_MOUNT=${REPLAYS_MOUNT}

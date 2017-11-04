@@ -1,6 +1,5 @@
-ARG GAME_VERSION=latest
-FROM jrepp/s2client/game:${GAME_VERSION}
-MAINTAINER jrepp@blizzard.com
+FROM ubuntu:16.04
+MAINTAINER jacobrepp@gmail.com
 
 # Update the image with required build packages
 RUN \
@@ -26,10 +25,11 @@ RUN \
     wget
 
 # Specify the shared mount points
-VOLUME [ "/s2client/code", "/s2client/build", "/s2client/replays" ]
+VOLUME [ "/s2client/shared/code", "/s2client/shared/build", "/s2client/shared/replays" ]
 
 # Generate a new SSH key pair without user input
 RUN cat /dev/zero | ssh-keygen -q -N "" > /dev/null
 
-# Override the jrepp/s2client/game entrypoint
+ADD container-scripts /api-dev
+
 ENTRYPOINT [ "/bin/bash" ]

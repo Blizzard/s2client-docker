@@ -14,7 +14,7 @@ if [ -n "$stale_images" ]; then
 fi
 
 stale_volumes=$(docker volume ls -qf dangling=true)
-# echo "stale volumes: ${stale_volumes}"
+echo "stale volumes: ${stale_volumes}"
 if [ -n "$stale_volumes" ]; then
 	docker volume rm $stale_volumes
 fi

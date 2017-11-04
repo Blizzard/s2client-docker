@@ -3,9 +3,9 @@
 #
 # This clones a clean copy of the repo
 #
-mkdir -p downloads
+mkdir -p _temp/code
 
-pushd downloads
+pushd _temp/code
 
 if [ -d s2client-api ]; then
     cd s2client-api && git pull -r
