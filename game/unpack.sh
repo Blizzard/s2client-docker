@@ -5,7 +5,7 @@
 SCRIPT_PATH=${0%/*}
 . ${SCRIPT_PATH}/../config.sh
 
-pushd downloads
+pushd _temp
 
 if [ ! -d ${GAME_VERSION}/StarCraftII ]; then
     $UNZIP_CMD SC2.${GAME_VERSION}.zip -d ${GAME_VERSION}

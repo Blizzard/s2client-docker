@@ -8,9 +8,7 @@ WGET_CMD="wget --timestamping --continue"
 #
 # This downloads zip files for current version
 #
-mkdir -p downloads/
-
-pushd downloads
+mkdir -p _temp && pushd _temp
 
 # Just clone the base repository for the maps
 if [ ! -d s2client-api ]; then
